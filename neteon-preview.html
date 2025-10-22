@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neteon AI - Style Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       CSS Variables & Theme System
+       ============================================ */
+    :root {
+      /* Light mode colors */
+      --bg: hsl(0, 0%, 99%);
+      --fg: hsl(222, 14%, 12%);
+      --bg-secondary: hsl(0, 0%, 95%);
+      --border: hsl(0, 0%, 88%);
+      --border-hover: hsl(0, 0%, 75%);
+
+      /* Brand colors */
+      --brand: #3B82F6;
+      --brand-dark: #2563EB;
+      --accent: #22C55E;
+      --warning: #F59E0B;
+      --danger: #EF4444;
+
+      /* Neutral shades */
+      --muted: hsl(0, 0%, 50%);
+      --muted-dark: hsl(0, 0%, 35%);
+
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    .dark {
+      --bg: hsl(222, 14%, 10%);
+      --fg: hsl(0, 0%, 100%);
+      --bg-secondary: hsl(222, 14%, 14%);
+      --border: hsl(222, 14%, 20%);
+      --border-hover: hsl(222, 14%, 30%);
+
+      --muted: hsl(0, 0%, 60%);
+      --muted-dark: hsl(0, 0%, 45%);
+
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+    }
+
+    /* ============================================
+       Base Styles
+       ============================================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      transition: background 200ms ease, color 200ms ease;
+    }
+
+    /* ============================================
+       Typography
+       ============================================ */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    h1 { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.03em; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.02em; }
+    h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+    h4 { font-size: 1.25rem; }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .lead {
+      font-size: clamp(1.125rem, 2vw, 1.25rem);
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       Layout Components
+       ============================================ */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    /* ============================================
+       Navbar
+       ============================================ */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid transparent;
+      transition: all 250ms ease;
+      backdrop-filter: blur(12px);
+    }
+
+    .navbar.scrolled {
+      background: rgba(var(--bg-rgb), 0.8);
+      border-bottom-color: var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      transition: color 150ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--fg);
+    }
+
+    /* ============================================
+       Buttons
+       ============================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 150ms ease;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--brand-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary {
+      background: var(--bg-secondary);
+      color: var(--fg);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      padding: 0.5rem 1rem;
+    }
+
+    .btn-ghost:hover {
+      color: var(--fg);
+      background: var(--bg-secondary);
+    }
+
+    /* ============================================
+       Hero Section
+       ============================================ */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      animation: fadeInUp 600ms ease forwards;
+      opacity: 0;
+    }
+
+    .hero h1 {
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--fg) 0%, var(--muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .lead {
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================
+       Cards
+       ============================================ */
+    .card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 200ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--border-hover);
+    }
+
+    .card-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      font-size: 0.9375rem;
+      margin-bottom: 0;
+    }
+
+    /* ============================================
+       Grid Layouts
+       ============================================ */
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    /* ============================================
+       Stats Section
+       ============================================ */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat h3 {
+      font-size: 2.5rem;
+      color: var(--brand);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat p {
+      color: var(--muted);
+      font-size: 0.9375rem;
+      margin: 0;
+    }
+
+    /* ============================================
+       Logo Cloud
+       ============================================ */
+    .logo-cloud {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0.6;
+      filter: grayscale(100%);
+      transition: all 300ms ease;
+    }
+
+    .logo-cloud:hover {
+      opacity: 0.8;
+      filter: grayscale(50%);
+    }
+
+    .logo-cloud-item {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    /* ============================================
+       Pricing Cards
+       ============================================ */
+    .pricing-card {
+      background: var(--bg-secondary);
+      border: 2px solid var(--border);
+      border-radius: 1rem;
+      padding: 2.5rem;
+      text-align: center;
+      transition: all 250ms ease;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--brand);
+      background: linear-gradient(135deg,
+        rgba(59, 130, 246, 0.05) 0%,
+        rgba(34, 197, 94, 0.05) 100%);
+      transform: scale(1.05);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .pricing-card.featured:hover {
+      transform: translateY(-6px) scale(1.07);
+    }
+
+    .pricing-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: var(--brand);
+      color: white;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-price {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      margin: 1rem 0;
+    }
+
+    .pricing-price span {
+      font-size: 1.25rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      margin: 2rem 0;
+      padding: 0;
+    }
+
+    .pricing-features li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9375rem;
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+
+    .check-icon {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* ============================================
+       Code Block
+       ============================================ */
+    .code-block {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      position: relative;
+    }
+
+    .code-block pre {
+      margin: 0;
+      color: var(--fg);
+    }
+
+    .code-comment {
+      color: var(--muted);
+    }
+
+    .code-string {
+      color: var(--accent);
+    }
+
+    .code-keyword {
+      color: var(--brand);
+      font-weight: 600;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 150ms ease;
+    }
+
+    .copy-btn:hover {
+      color: var(--fg);
+      border-color: var(--border-hover);
+    }
+
+    /* ============================================
+       Theme Toggle
+       ============================================ */
+    .theme-toggle {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 150ms ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--border-hover);
+      transform: scale(1.05);
+    }
+
+    /* ============================================
+       Footer
+       ============================================ */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      margin-top: 5rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h4 {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      color: var(--fg);
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9375rem;
+      transition: color 150ms ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--fg);
+    }
+
+    .footer-bottom {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    /* ============================================
+       Animations
+       ============================================ */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-in {
+      animation: fadeInUp 600ms ease forwards;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ============================================
+       Responsive Adjustments
+       ============================================ */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 70vh;
+        padding: 2rem 0;
+      }
+
+      section {
+        padding: 3rem 0;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .pricing-card.featured {
+        transform: scale(1);
+      }
+    }
+
+    /* ============================================
+       Utility Classes
+       ============================================ */
+    .text-center { text-align: center; }
+    .text-muted { color: var(--muted); }
+    .text-brand { color: var(--brand); }
+    .text-accent { color: var(--accent); }
+
+    .mb-1 { margin-bottom: 0.5rem; }
+    .mb-2 { margin-bottom: 1rem; }
+    .mb-3 { margin-bottom: 1.5rem; }
+    .mb-4 { margin-bottom: 2rem; }
+
+    .mt-4 { margin-top: 2rem; }
+    .mt-8 { margin-top: 4rem; }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       Navigation
+       ============================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-content">
+      <a href="#" class="nav-logo">Neteon AI</a>
+      <ul class="nav-links">
+        <li><a href="#product">Product</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       Hero Section
+       ============================================ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Leading the Future of<br>Edge AI & Automation</h1>
+        <p class="lead">
+          Committed to advancing intelligent, connected systems across industries.
+          High-performance, application-oriented designs that power the next generation of edge computing.
+        </p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary">Start Free Trial</a>
+          <a href="#" class="btn btn-secondary">View Documentation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Stats Section
+       ============================================ -->
+  <section style="padding: 3rem 0; background: var(--bg-secondary);">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <h3>+38%</h3>
+          <p>Deployment Speed</p>
+        </div>
+        <div class="stat">
+          <h3>99.99%</h3>
+          <p>Uptime Guarantee</p>
+        </div>
+        <div class="stat">
+          <h3>SOC 2</h3>
+          <p>Type II Certified</p>
+        </div>
+        <div class="stat">
+          <h3>24/7</h3>
+          <p>Expert Support</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Logo Cloud
+       ============================================ -->
+  <section style="padding: 3rem 0;">
+    <div class="container">
+      <p class="text-center text-muted mb-4">Trusted by engineering teams worldwide</p>
+      <div class="logo-cloud">
+        <div class="logo-cloud-item">TechCorp</div>
+        <div class="logo-cloud-item">InnovateLabs</div>
+        <div class="logo-cloud-item">CloudScale</div>
+        <div class="logo-cloud-item">DataFlow</div>
+        <div class="logo-cloud-item">AutoSys</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Features Section
+       ============================================ -->
+  <section id="product">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2>Engineering-Grade Solutions</h2>
+        <p class="lead">Built for performance, designed for scale, optimized for your workflow</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>High-Performance Edge Computing</h3>
+          <p>Deploy AI models at the edge with millisecond latency. Optimized for real-time inference and decision-making.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3>Enterprise-Grade Security</h3>
+          <p>SOC 2 Type II certified with end-to-end encryption. Zero-trust architecture and compliance built-in.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🚀</div>
+          <h3>Rapid Deployment Pipeline</h3>
+          <p>Ship 38% faster with CI/CD integration, automated testing, and intelligent rollback capabilities.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Real-Time Analytics</h3>
+          <p>Monitor performance, track metrics, and gain insights with built-in observability and alerting.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🔧</div>
+          <h3>Developer-First API</h3>
+          <p>RESTful and GraphQL APIs with comprehensive SDKs. Built by developers, for developers.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">♾️</div>
+          <h3>Infinite Scalability</h3>
+          <p>Auto-scaling infrastructure that grows with your needs. From prototype to enterprise scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Code Example Section
+       ============================================ -->
+  <section style="background: var(--bg-secondary); padding: 5rem 0;">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2>Simple Integration</h2>
+        <p class="lead">Production-ready in minutes with our intuitive API</p>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="code-block">
+          <button class="copy-btn" onclick="copyCode()">Copy</button>
+          <pre><code><span class="code-comment">// Initialize Neteon SDK</span>
+<span class="code-keyword">import</span> { Neteon } <span class="code-keyword">from</span> <span class="code-string">'@neteon/sdk'</span>;
+
+<span class="code-keyword">const</span> client = <span class="code-keyword">new</span> Neteon({
+  apiKey: process.env.NETEON_API_KEY,
+  region: <span class="code-string">'us-west-2'</span>
+});
+
+<span class="code-comment">// Deploy your model to the edge</span>
+<span class="code-keyword">const</span> deployment = <span class="code-keyword">await</span> client.deploy({
+  model: <span class="code-string">'my-ai-model'</span>,
+  target: <span class="code-string">'edge'</span>,
+  replicas: <span class="code-string">3</span>,
+  autoScale: <span class="code-keyword">true</span>
+});
+
+console.log(<span class="code-string">`Deployed: ${deployment.url}`</span>);</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Pricing Section
+       ============================================ -->
+  <section id="pricing">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2>Simple, Transparent Pricing</h2>
+        <p class="lead">Choose the plan that fits your team's needs</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="pricing-card">
+          <h3>Free</h3>
+          <div class="pricing-price">$0<span>/month</span></div>
+          <p class="text-muted">Perfect for prototyping</p>
+          <ul class="pricing-features">
+            <li><span class="check-icon">✓</span> Up to 100 API calls/day</li>
+            <li><span class="check-icon">✓</span> 1 edge deployment</li>
+            <li><span class="check-icon">✓</span> Community support</li>
+            <li><span class="check-icon">✓</span> Basic analytics</li>
+          </ul>
+          <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Get Started</button>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <h3>Pro</h3>
+          <div class="pricing-price">$299<span>/month</span></div>
+          <p class="text-muted">For growing teams</p>
+          <ul class="pricing-features">
+            <li><span class="check-icon">✓</span> Unlimited API calls</li>
+            <li><span class="check-icon">✓</span> 10 edge deployments</li>
+            <li><span class="check-icon">✓</span> Priority support</li>
+            <li><span class="check-icon">✓</span> Advanced analytics</li>
+            <li><span class="check-icon">✓</span> Custom domains</li>
+            <li><span class="check-icon">✓</span> Team collaboration</li>
+          </ul>
+          <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Start Pro Trial</button>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <div class="pricing-price">Custom</div>
+          <p class="text-muted">For large organizations</p>
+          <ul class="pricing-features">
+            <li><span class="check-icon">✓</span> Everything in Pro</li>
+            <li><span class="check-icon">✓</span> Unlimited deployments</li>
+            <li><span class="check-icon">✓</span> 24/7 dedicated support</li>
+            <li><span class="check-icon">✓</span> SLA guarantee</li>
+            <li><span class="check-icon">✓</span> On-premise option</li>
+            <li><span class="check-icon">✓</span> Custom integrations</li>
+          </ul>
+          <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Contact Sales</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA Section
+       ============================================ -->
+  <section style="background: linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%); padding: 5rem 0; color: white;">
+    <div class="container text-center">
+      <h2 style="color: white; margin-bottom: 1rem;">Ready to Transform Your Edge AI Workflow?</h2>
+      <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Join thousands of engineering teams shipping faster with Neteon AI
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#" class="btn" style="background: white; color: var(--brand);">Start Free Trial</a>
+        <a href="#" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">Schedule Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Footer
+       ============================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">Integrations</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Compliance</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Neteon AI. All rights reserved. Built for the future of intelligent automation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JavaScript
+       ============================================ -->
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+
+    // Check for saved theme preference or default to dark
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    html.classList.toggle('dark', currentTheme === 'dark');
+    updateThemeIcon();
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      const newTheme = html.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon();
+    });
+
+    function updateThemeIcon() {
+      themeIcon.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
+    }
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      lastScroll = currentScroll;
+    });
+
+    // Copy code function
+    function copyCode() {
+      const codeBlock = document.querySelector('.code-block code');
+      const text = codeBlock.textContent;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => {
+          btn.textContent = originalText;
+        }, 2000);
+      });
+    }
+
+    // Animate cards on scroll
+    const cards = document.querySelectorAll('.card, .pricing-card');
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 400ms ease, transform 400ms ease';
+      observer.observe(card);
+    });
+  </script>
+
+</body>
+</html>
