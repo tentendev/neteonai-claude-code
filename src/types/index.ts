@@ -7,10 +7,10 @@ export interface Product {
   name: string;
   category: string;
   slug: string;
-  shortDescription: string;
-  fullDescription: string;
+  title: string;
+  description: string;
   features: string[];
-  specifications: Specification[];
+  specifications: Record<string, string>;
   applications: string[];
   image: string;
   datasheet?: string;

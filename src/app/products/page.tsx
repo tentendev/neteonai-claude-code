@@ -113,7 +113,7 @@ function ProductCard({ product }: { product: any }) {
     <Card className="flex flex-col">
       <CardHeader>
         <CardTitle className="text-2xl">{product.name}</CardTitle>
-        <CardDescription className="text-base">{product.shortDescription}</CardDescription>
+        <CardDescription className="text-base">{product.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-1">
         <div className="mb-6">

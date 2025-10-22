@@ -156,7 +156,7 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
                         </CardHeader>
                         <CardContent>
                           <p className="mb-4 text-sm text-muted-foreground">
-                            {product.shortDescription}
+                            {product.description}
                           </p>
                           <Button asChild variant="outline" size="sm">
                             <Link href={`/products/${product.slug}`}>View Product</Link>

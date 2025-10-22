@@ -135,7 +135,7 @@ export default function TechnologyDetailPage({ params }: { params: { slug: strin
                   <Card key={product.id}>
                     <CardHeader>
                       <CardTitle>{product.name}</CardTitle>
-                      <CardDescription>{product.shortDescription}</CardDescription>
+                      <CardDescription>{product.description}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <Button asChild>
