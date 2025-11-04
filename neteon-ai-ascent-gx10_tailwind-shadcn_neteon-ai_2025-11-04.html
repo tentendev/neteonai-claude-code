@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neteon AI Ascent GX10 | Desktop AI Supercomputer That Actually Fits on Your Desk</title>
+    <meta name="description" content="1 petaFLOP AI performance in a compact desktop. Powered by NVIDIA GB10 Grace Blackwell. The AI supercomputer that doesn't need its own room.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neteon: {
+                            primary: '#01A982',
+                            dark: '#00543C',
+                            light: '#E8F8F5',
+                            gray: '#425563',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(0, 84, 60, 0.95) 0%, rgba(1, 169, 130, 0.85) 100%);
+        }
+
+        .tech-grid-bg {
+            background-image:
+                linear-gradient(rgba(1, 169, 130, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(1, 169, 130, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .enterprise-badge {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            background: white;
+            border: 1px solid #e5e7eb;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #01A982, #00543C);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .pulse-glow {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+
+        .spec-badge {
+            background: linear-gradient(135deg, #01A982 0%, #00543C 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 backdrop-blur-lg bg-white/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-12">
+                    <a href="https://neteon.ai/" class="text-2xl font-bold text-neteon-dark">
+                        <span class="text-neteon-primary">Neteon</span> AI
+                    </a>
+                    <div class="hidden lg:flex space-x-8">
+                        <a href="#ascent" class="text-sm font-medium text-gray-700 hover:text-neteon-primary transition">Ascent GX10</a>
+                        <a href="#products" class="text-sm font-medium text-gray-700 hover:text-neteon-primary transition">Products</a>
+                        <a href="#services" class="text-sm font-medium text-gray-700 hover:text-neteon-primary transition">Services</a>
+                        <a href="#applications" class="text-sm font-medium text-gray-700 hover:text-neteon-primary transition">Applications</a>
+                        <a href="#resources" class="text-sm font-medium text-gray-700 hover:text-neteon-primary transition">Resources</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="hidden md:block text-sm font-medium text-gray-700 hover:text-neteon-primary transition">Contact Sales</button>
+                    <button class="bg-neteon-primary text-white px-6 py-2 rounded font-semibold text-sm hover:bg-neteon-dark transition">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-gray-900 via-neteon-dark to-gray-800 text-white overflow-hidden min-h-[90vh] flex items-center">
+        <!-- Tech Grid Background -->
+        <div class="absolute inset-0 tech-grid-bg opacity-30"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-transparent"></div>
+
+        <!-- Floating Elements -->
+        <div class="absolute top-20 right-20 w-64 h-64 bg-neteon-primary/10 rounded-full blur-3xl pulse-glow"></div>
+        <div class="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-up">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center space-x-2 enterprise-badge px-4 py-2 rounded-full mb-8">
+                        <span class="w-2 h-2 bg-neteon-primary rounded-full animate-pulse"></span>
+                        <span class="text-sm font-semibold">AI Supercomputer • Powered by NVIDIA GB10</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Desktop AI Supercomputer
+                        <br/>
+                        <span class="text-neteon-primary">That Actually Fits</span>
+                    </h1>
+
+                    <!-- Subheadline -->
+                    <p class="text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
+                        Get 1 petaFLOP of AI performance on your desk. No data center required. Just plug it in and start training models up to 200B parameters.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <button class="cta-button relative bg-neteon-primary text-white px-8 py-4 rounded font-bold hover:bg-neteon-dark transition">
+                            Explore Ascent GX10
+                        </button>
+                        <button class="enterprise-badge text-white px-8 py-4 rounded font-semibold hover:bg-white/20 transition">
+                            Download Datasheet
+                        </button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
+                        <div>
+                            <div class="text-4xl font-bold text-neteon-primary">1 PF</div>
+                            <div class="text-sm text-gray-400 mt-1">AI Performance</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-neteon-primary">128GB</div>
+                            <div class="text-sm text-gray-400 mt-1">Unified Memory</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-neteon-primary">200B</div>
+                            <div class="text-sm text-gray-400 mt-1">Parameter Models</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="hidden lg:block relative">
+                    <div class="relative z-10">
+                        <img src="https://dlcdnwebimgs.asus.com/gain/c66958f8-57de-4563-b0db-bd317bfaf1f3/w800"
+                             alt="Neteon AI Ascent GX10"
+                             class="rounded-lg shadow-2xl">
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 w-72 h-72 bg-neteon-primary/20 rounded-lg -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="bg-white py-16 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm font-semibold text-gray-500 uppercase tracking-wider mb-8">
+                Powered by Industry-Leading Technology
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+                <div class="text-xl font-bold text-gray-600">NVIDIA GB10</div>
+                <div class="text-xl font-bold text-gray-600">Grace Blackwell</div>
+                <div class="text-xl font-bold text-gray-600">ConnectX-7</div>
+                <div class="text-xl font-bold text-gray-600">DGX Spark</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Grid -->
+    <section id="ascent" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block bg-neteon-primary/10 text-neteon-primary text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                    ASCENT GX10
+                </div>
+                <h2 class="section-title mb-6">AI Supercomputing, Reimagined</h2>
+                <p class="text-xl text-gray-600">
+                    Everything you need to develop, fine-tune, and deploy AI models—right on your desk.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-xl border border-gray-200 card-hover">
+                    <div class="w-14 h-14 bg-gradient-to-br from-neteon-primary to-neteon-dark rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Extreme AI Performance</h3>
+                    <p class="text-gray-600 mb-4">
+                        1 petaFLOP of AI compute with NVIDIA GB10 Grace Blackwell. Train and fine-tune models up to 200B parameters locally.
+                    </p>
+                    <div class="spec-badge">FP4 Support</div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-xl border border-gray-200 card-hover">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Unified Memory Architecture</h3>
+                    <p class="text-gray-600 mb-4">
+                        128GB coherent unified system memory. Work with larger datasets and complex models without bottlenecks.
+                    </p>
+                    <div class="spec-badge">LPDDR5x</div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-xl border border-gray-200 card-hover">
+                    <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Developer-Optimized</h3>
+                    <p class="text-gray-600 mb-4">
+                        Full NVIDIA AI software stack included. PyTorch, TensorFlow, CUDA—everything pre-configured and ready to go.
+                    </p>
+                    <div class="spec-badge">DGX OS</div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-xl border border-gray-200 card-hover">
+                    <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Scalable Architecture</h3>
+                    <p class="text-gray-600 mb-4">
+                        Stack two GX10 systems with ConnectX-7. Handle models up to 405B parameters like Llama 3.1.
+                    </p>
+                    <div class="spec-badge">NVLink C2C</div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white p-8 rounded-xl border border-gray-200 card-hover">
+                    <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Advanced Thermal Design</h3>
+                    <p class="text-gray-600 mb-4">
+                        Dual-fan with 7-level control and vapor chamber cooling. 1.6× more efficient than comparable systems.
+                    </p>
+                    <div class="spec-badge">QuietFlow</div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white p-8 rounded-xl border border-gray-200 card-hover">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Compact Design</h3>
+                    <p class="text-gray-600 mb-4">
+                        Ultra-small form factor fits on any desk. Perfect for labs, offices, and edge deployments.
+                    </p>
+                    <div class="spec-badge">150 x 150 x 51mm</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Deep Dive -->
+    <section class="py-24 bg-gradient-to-br from-neteon-dark to-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-block bg-white/10 text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
+                        PERFORMANCE
+                    </div>
+                    <h2 class="text-4xl font-bold mb-6">1 PetaFLOP of AI Power</h2>
+                    <p class="text-xl text-gray-300 mb-8">
+                        The NVIDIA GB10 Grace Blackwell Superchip delivers desktop AI performance that was impossible just a year ago. Train, fine-tune, and run inference on models you couldn't dream of running locally.
+                    </p>
+
+                    <!-- Performance Metrics -->
+                    <div class="space-y-6 mb-10">
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold">AI Training (FP4)</span>
+                                <span class="text-neteon-primary font-bold">1 petaFLOP</span>
+                            </div>
+                            <div class="w-full bg-white/20 rounded-full h-2">
+                                <div class="bg-neteon-primary h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold">Unified Memory</span>
+                                <span class="text-neteon-primary font-bold">128GB LPDDR5x</span>
+                            </div>
+                            <div class="w-full bg-white/20 rounded-full h-2">
+                                <div class="bg-neteon-primary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold">Model Size Support</span>
+                                <span class="text-neteon-primary font-bold">200B Parameters</span>
+                            </div>
+                            <div class="w-full bg-white/20 rounded-full h-2">
+                                <div class="bg-neteon-primary h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="bg-white text-neteon-dark px-8 py-4 rounded font-bold hover:bg-gray-100 transition">
+                        View Technical Specs
+                    </button>
+                </div>
+
+                <div class="hidden lg:block">
+                    <img src="https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/pic_ai.jpg"
+                         alt="AI Performance"
+                         class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Models Support -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block bg-neteon-primary/10 text-neteon-primary text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                    AI MODELS
+                </div>
+                <h2 class="section-title mb-6">Train the Models That Matter</h2>
+                <p class="text-xl text-gray-600">
+                    From DeepSeek to Llama, run the latest AI models without compromise.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <img src="https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/pic_models.jpg"
+                         alt="AI Models"
+                         class="rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold mb-6">Support for 200B Parameter Models</h3>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Fine-tune and run inference on the latest reasoning models right on your desk. Need more? Stack two GX10 systems to handle models up to 405B parameters like Llama 3.1.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-neteon-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <div>
+                                <div class="font-semibold text-lg mb-1">DeepSeek R1</div>
+                                <p class="text-gray-600">AI inference optimized up to 70B parameters</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-neteon-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <div>
+                                <div class="font-semibold text-lg mb-1">Llama 3.1</div>
+                                <p class="text-gray-600">Up to 405B parameters with dual-GX10 setup</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-neteon-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <div>
+                                <div class="font-semibold text-lg mb-1">Meta & Google Models</div>
+                                <p class="text-gray-600">Broad compatibility with industry frameworks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connectivity & Networking -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block bg-neteon-primary/10 text-neteon-primary text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                    CONNECTIVITY
+                </div>
+                <h2 class="section-title mb-6">Enterprise-Grade Networking Built In</h2>
+                <p class="text-xl text-gray-600">
+                    NVIDIA ConnectX-7 delivers the speed and security your AI workloads demand.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl border border-gray-200 card-hover text-center">
+                    <img src="https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/security-1.jpg"
+                         alt="Fast Data"
+                         class="rounded-lg mb-6 w-full h-48 object-cover">
+                    <h3 class="text-xl font-bold mb-3">Ultra-Fast Data Throughput</h3>
+                    <p class="text-gray-600">
+                        Lightning-fast bandwidth for distributed AI workloads and rapid model synchronization.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl border border-gray-200 card-hover text-center">
+                    <img src="https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/security-2.jpg"
+                         alt="Secure"
+                         class="rounded-lg mb-6 w-full h-48 object-cover">
+                    <h3 class="text-xl font-bold mb-3">Hardware-Accelerated Security</h3>
+                    <p class="text-gray-600">
+                        Built-in TLS, IPsec, and MACsec encryption without CPU overhead.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl border border-gray-200 card-hover text-center">
+                    <img src="https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/security-3.jpg"
+                         alt="Precise"
+                         class="rounded-lg mb-6 w-full h-48 object-cover">
+                    <h3 class="text-xl font-bold mb-3">Precision Time Sync</h3>
+                    <p class="text-gray-600">
+                        IEEE 1588v2 PTP for microsecond-level synchronization in edge computing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Stack -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block bg-neteon-primary/10 text-neteon-primary text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                    SOFTWARE
+                </div>
+                <h2 class="section-title mb-6">Everything You Need, Ready to Go</h2>
+                <p class="text-xl text-gray-600">
+                    Complete AI development environment pre-configured and optimized.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-xl border border-gray-200">
+                    <div class="w-14 h-14 bg-purple-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Preloaded & Ready</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• NVIDIA DGX OS (Ubuntu)</li>
+                        <li>• Complete AI software stack</li>
+                        <li>• Pre-configured frameworks</li>
+                        <li>• Instant deployment</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl border border-gray-200">
+                    <div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Optimized Tools</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• PyTorch & TensorFlow</li>
+                        <li>• CUDA & TensorRT</li>
+                        <li>• Jupyter notebooks</li>
+                        <li>• NVIDIA NIMs & Blueprints</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl border border-gray-200">
+                    <div class="w-14 h-14 bg-green-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Model Support</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• DeepSeek R1 (70B)</li>
+                        <li>• Llama 3.1 (405B)</li>
+                        <li>• Meta & Google models</li>
+                        <li>• Custom frameworks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications -->
+    <section id="applications" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block bg-neteon-primary/10 text-neteon-primary text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                    APPLICATIONS
+                </div>
+                <h2 class="section-title mb-6">Built for Real AI Work</h2>
+                <p class="text-xl text-gray-600">
+                    From prototyping to production deployment, we've got you covered.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <img src="https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/application-1.jpg"
+                         alt="Prototyping"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Rapid Prototyping</h3>
+                        <p class="text-gray-600">
+                            Test ideas quickly without waiting for cloud resources. Iterate faster, ship better.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <img src="https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/application-2.jpg"
+                         alt="Fine Tuning"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Model Fine-Tuning</h3>
+                        <p class="text-gray-600">
+                            Customize pre-trained models for your specific use case. Keep your data local and private.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                    <img src="https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/application-3.jpg"
+                         alt="Data Science"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Data Science</h3>
+                        <p class="text-gray-600">
+                            Analyze massive datasets with ease. Run complex analytics and ML workflows locally.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cloud Integration -->
+            <div class="bg-gradient-to-br from-neteon-dark to-gray-900 text-white rounded-2xl p-12">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6">Seamless Cloud Integration</h3>
+                        <p class="text-lg text-gray-300 mb-8">
+                            Develop locally, deploy anywhere. Move your models to DGX Cloud or any accelerated infrastructure with minimal code changes.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-neteon-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Same software stack as DGX Cloud</span>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-neteon-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Cost-effective local experimentation</span>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-neteon-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Free up cluster resources for production</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/pic_deployment.jpg"
+                             alt="Cloud Integration"
+                             class="rounded-lg shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block bg-neteon-primary/10 text-neteon-primary text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                    SPECIFICATIONS
+                </div>
+                <h2 class="section-title mb-6">Technical Excellence</h2>
+                <p class="text-xl text-gray-600">
+                    Every detail engineered for maximum AI performance.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Computing -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-6">Computing Power</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">GPU</span>
+                            <span class="text-gray-600">NVIDIA Blackwell</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">CPU</span>
+                            <span class="text-gray-600">20-Core Arm Processor</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">AI Performance</span>
+                            <span class="text-gray-600">1 petaFLOP (FP4)</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">Memory</span>
+                            <span class="text-gray-600">128GB LPDDR5x Unified</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">Interconnect</span>
+                            <span class="text-gray-600">NVLink C2C</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connectivity -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-6">Connectivity</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">Network</span>
+                            <span class="text-gray-600">ConnectX-7 NIC</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">Ethernet</span>
+                            <span class="text-gray-600">10 GbE LAN</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">Display</span>
+                            <span class="text-gray-600">HDMI 2.1b</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">USB</span>
+                            <span class="text-gray-600">4x USB 3.2 Gen 2x2 Type-C</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">Power Delivery</span>
+                            <span class="text-gray-600">180W EPR PD3.1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Physical -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-6">Physical</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">Dimensions</span>
+                            <span class="text-gray-600">150 x 150 x 51mm</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">Cooling</span>
+                            <span class="text-gray-600">Dual-fan + Vapor Chamber</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">Form Factor</span>
+                            <span class="text-gray-600">Ultra-compact Desktop</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">Certification</span>
+                            <span class="text-gray-600">MIL-STD 810H</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">Security</span>
+                            <span class="text-gray-600">Kensington Lock Slot</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-6">Software Stack</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">OS</span>
+                            <span class="text-gray-600">NVIDIA DGX OS (Ubuntu)</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">Frameworks</span>
+                            <span class="text-gray-600">PyTorch, TensorFlow</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">Libraries</span>
+                            <span class="text-gray-600">CUDA, TensorRT</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="font-semibold">Tools</span>
+                            <span class="text-gray-600">Jupyter, Ollama</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">AI Stack</span>
+                            <span class="text-gray-600">NVIDIA NIMs & Blueprints</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="bg-neteon-primary text-white px-10 py-4 rounded font-bold hover:bg-neteon-dark transition">
+                    Download Full Datasheet
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-neteon-dark to-neteon-primary text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">Ready to Supercharge Your AI Development?</h2>
+            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+                Join researchers, developers, and data scientists who are pushing AI boundaries with desktop supercomputing.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="cta-button relative bg-white text-neteon-dark px-10 py-4 rounded font-bold hover:bg-gray-100 transition">
+                    Contact Sales Team
+                </button>
+                <button class="enterprise-badge text-white px-10 py-4 rounded font-bold hover:bg-white/20 transition">
+                    Request Demo
+                </button>
+            </div>
+            <p class="mt-8 text-sm text-white/70">
+                Available for education, research, and enterprise deployments
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-5 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="text-2xl font-bold text-white mb-4">
+                        <span class="text-neteon-primary">Neteon</span> AI
+                    </div>
+                    <p class="text-sm mb-6">
+                        Desktop AI supercomputers that bring petaflop-scale performance to developers, researchers, and innovators worldwide.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-neteon-primary transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-neteon-primary transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                        </a>
+                        <a href="https://github.com/neteon-ai" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-neteon-primary transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm">Products</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-neteon-primary transition">Ascent GX10</a></li>
+                        <li><a href="#" class="hover:text-neteon-primary transition">Industrial PCs</a></li>
+                        <li><a href="#" class="hover:text-neteon-primary transition">Edge Servers</a></li>
+                        <li><a href="#" class="hover:text-neteon-primary transition">AI Solutions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-neteon-primary transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-neteon-primary transition">Technical Specs</a></li>
+                        <li><a href="#" class="hover:text-neteon-primary transition">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-neteon-primary transition">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://neteon.ai/" class="hover:text-neteon-primary transition">About</a></li>
+                        <li><a href="#" class="hover:text-neteon-primary transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-neteon-primary transition">Support</a></li>
+                        <li><a href="#" class="hover:text-neteon-primary transition">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>
+                    © 2025 Neteon AI. All rights reserved. | Powered by <a href="https://neteon.ai/" class="text-neteon-primary hover:underline" target="_blank">Neteon AI</a>
+                </p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-neteon-primary transition">Privacy</a>
+                    <a href="#" class="hover:text-neteon-primary transition">Terms</a>
+                    <a href="#" class="hover:text-neteon-primary transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.8s ease-out';
+            observer.observe(section);
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 30);
+        }
+    </script>
+</body>
+</html>

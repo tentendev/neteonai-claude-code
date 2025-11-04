@@ -2080,6 +2080,45 @@ export const products: Product[] = [
       "Video Analytics"
     ],
     "image": "/images/products/poc-764vr.jpg"
+  },
+  {
+    "id": "asus-pe1103n",
+    "name": "PE1103N",
+    "slug": "pe1103n",
+    "category": "edge-ai-computing",
+    "title": "Edge AI System with NVIDIA® Jetson™ Orin™ supporting up to 8 GMSL2 cameras",
+    "description": "ASUS IoT PE1103N is a high-performance fanless edge AI computer powered by the NVIDIA® Jetson Orin™ NX/Nano, delivering up to 157 TOPS of AI inferencing within a 7–40W power envelope. It supports up to eight GMSL connections via FAKRA connector for real-time video transmission with integrated drivers by multi-vendor for easy development and flexible deployment. Along with extensive I/O and Out-of-Band (OOB) management for remote monitoring and control, PE1103N ensures seamless coordination and precise synchronization across sensors—including GNSS, LiDAR, and IMU—via Precision Time Protocol (PTP) for accurate and reliable performance.",
+    "features": [
+      "Intelligent Edge AI System: Powered by NVIDIA® Jetson Orin™ NX and Orin™ Nano",
+      "Fanless Design: Compact form factor with wide operating temperature range of -20 to 60 °C",
+      "Flexible Connectivity: Ready to connect to Wi-Fi, 4G/5G, and GNSS with PPS via optional modules",
+      "Wide-Range DC Input: Features built-in ignition power control for versatile power options",
+      "Rugged Reliability: Withstands harsh environments, tested to MIL-STD-810H standards",
+      "Comprehensive I/O: Includes 1x 10 GbE with PTP, 1 GbE, 2x RS232/422/485, and 1x CAN bus",
+      "Up to 8 GMSL2 camera connections via FAKRA connector for real-time video transmission",
+      "Out-of-Band (OOB) management for remote monitoring and control"
+    ],
+    "specifications": {
+      "Processor": "NVIDIA® Jetson Orin™ NX/Nano (up to 157 TOPS AI performance)",
+      "Memory": "See datasheet for specifications",
+      "Storage": "See datasheet for specifications",
+      "Networking": "1x 10 GbE with PTP, 1x GbE",
+      "Operating Temperature": "-20°C to 60°C",
+      "Power Input": "9-36V DC with built-in ignition power control",
+      "Certifications": "MIL-STD-810H"
+    },
+    "applications": [
+      "Autonomous Vehicles",
+      "Robotics",
+      "Industrial Automation",
+      "Video Surveillance",
+      "Traffic Management",
+      "AMR (Autonomous Mobile Robots)",
+      "Smart Cities",
+      "Machine Vision"
+    ],
+    "image": "/images/products/asus-pe1103n.jpg",
+    "datasheet": "https://dlcdnwebimgs.asus.com/files/media/985117bc-16e9-4d95-9245-e98a6b64a1b6/pe1103n-datasheet.pdf"
   }
 ];
 

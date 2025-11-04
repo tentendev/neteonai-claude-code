@@ -1,0 +1,130 @@
+/* Custom styles for Ascent GX10 page */
+
+.gradient-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 84, 60, 0.95) 0%,
+    rgba(1, 169, 130, 0.85) 100%
+  );
+}
+
+.tech-grid-bg {
+  background-image: linear-gradient(rgba(1, 169, 130, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1, 169, 130, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.enterprise-badge {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  background: white;
+  border: 1px solid #e5e7eb;
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #01a982, #00543c);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover::before {
+  transform: scaleX(1);
+}
+
+.cta-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.pulse-glow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.spec-badge {
+  background: linear-gradient(135deg, #01a982 0%, #00543c 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: inline-block;
+}
