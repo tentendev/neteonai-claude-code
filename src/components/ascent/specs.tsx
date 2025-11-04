@@ -67,8 +67,8 @@ export function AscentSpecs() {
                       idx < spec.items.length - 1 ? "pb-4 border-b border-gray-200" : ""
                     }`}
                   >
-                    <span className="font-semibold">{item.label}</span>
-                    <span className="text-gray-600">{item.value}</span>
+                    <span className="font-semibold text-gray-900">{item.label}</span>
+                    <span className="text-gray-700">{item.value}</span>
                   </div>
                 ))}
               </div>
