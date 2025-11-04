@@ -15,6 +15,7 @@ export const SITE_CONFIG = {
 } as const;
 
 export const NAV_LINKS = [
+  { label: "Ascent GX10", href: "/ascent-gx10" },
   { label: "Products", href: "/products" },
   { label: "Technologies", href: "/technologies" },
   { label: "Case Studies", href: "/case-studies" },
