@@ -29,7 +29,7 @@ export function AscentApplications() {
           <div className="inline-block bg-[#01A982]/10 text-[#01A982] text-sm font-semibold px-4 py-2 rounded-full mb-4">
             APPLICATIONS
           </div>
-          <h2 className="text-4xl font-bold mb-6">Built for Real AI Work</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Built for Real AI Work</h2>
           <p className="text-xl text-gray-600">
             From prototyping to production deployment, we've got you covered.
           </p>
@@ -40,7 +40,7 @@ export function AscentApplications() {
             <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
               <Image src={app.image} alt={app.title} width={400} height={300} className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3">{app.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{app.title}</h3>
                 <p className="text-gray-600">{app.description}</p>
               </div>
             </div>

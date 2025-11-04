@@ -49,7 +49,7 @@ export function AscentSpecs() {
           <div className="inline-block bg-[#01A982]/10 text-[#01A982] text-sm font-semibold px-4 py-2 rounded-full mb-4">
             SPECIFICATIONS
           </div>
-          <h2 className="text-4xl font-bold mb-6">Technical Excellence</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Technical Excellence</h2>
           <p className="text-xl text-gray-600">
             Every detail engineered for maximum AI performance.
           </p>
@@ -58,7 +58,7 @@ export function AscentSpecs() {
         <div className="grid md:grid-cols-2 gap-8">
           {specs.map((spec, index) => (
             <div key={index} className="bg-gray-50 p-8 rounded-xl border border-gray-200">
-              <h3 className="text-2xl font-bold mb-6">{spec.title}</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">{spec.title}</h3>
               <div className="space-y-4">
                 {spec.items.map((item, idx) => (
                   <div

@@ -60,7 +60,7 @@ export function AscentFeatures() {
           <div className="inline-block bg-[#01A982]/10 text-[#01A982] text-sm font-semibold px-4 py-2 rounded-full mb-4">
             ASCENT GX10
           </div>
-          <h2 className="section-title mb-6">AI Supercomputing, Reimagined</h2>
+          <h2 className="section-title text-gray-900 mb-6">AI Supercomputing, Reimagined</h2>
           <p className="text-xl text-gray-600">
             Everything you need to develop, fine-tune, and deploy AI models—right on your desk.
           </p>
@@ -74,7 +74,7 @@ export function AscentFeatures() {
               >
                 <feature.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
               <p className="text-gray-600 mb-4">{feature.description}</p>
               <div className="spec-badge">{feature.badge}</div>
             </div>

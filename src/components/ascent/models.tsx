@@ -24,7 +24,7 @@ export function AscentModels() {
           <div className="inline-block bg-[#01A982]/10 text-[#01A982] text-sm font-semibold px-4 py-2 rounded-full mb-4">
             AI MODELS
           </div>
-          <h2 className="text-4xl font-bold mb-6">Train the Models That Matter</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Train the Models That Matter</h2>
           <p className="text-xl text-gray-600">
             From DeepSeek to Llama, run the latest AI models without compromise.
           </p>
@@ -41,7 +41,7 @@ export function AscentModels() {
             />
           </div>
           <div>
-            <h3 className="text-3xl font-bold mb-6">Support for 200B Parameter Models</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">Support for 200B Parameter Models</h3>
             <p className="text-lg text-gray-600 mb-8">
               Fine-tune and run inference on the latest reasoning models right on your desk. Need
               more? Stack two GX10 systems to handle models up to 405B parameters like Llama 3.1.

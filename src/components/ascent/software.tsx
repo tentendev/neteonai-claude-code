@@ -37,7 +37,7 @@ export function AscentSoftware() {
           <div className="inline-block bg-[#01A982]/10 text-[#01A982] text-sm font-semibold px-4 py-2 rounded-full mb-4">
             SOFTWARE
           </div>
-          <h2 className="text-4xl font-bold mb-6">Everything You Need, Ready to Go</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Everything You Need, Ready to Go</h2>
           <p className="text-xl text-gray-600">
             Complete AI development environment pre-configured and optimized.
           </p>
@@ -52,7 +52,7 @@ export function AscentSoftware() {
               <div className={`w-14 h-14 ${category.iconBg} rounded-lg flex items-center justify-center mb-6`}>
                 <category.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4">{category.title}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{category.title}</h3>
               <ul className="space-y-2 text-gray-600">
                 {category.items.map((item, idx) => (
                   <li key={idx}>• {item}</li>

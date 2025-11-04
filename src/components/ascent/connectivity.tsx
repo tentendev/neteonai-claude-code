@@ -29,7 +29,7 @@ export function AscentConnectivity() {
           <div className="inline-block bg-[#01A982]/10 text-[#01A982] text-sm font-semibold px-4 py-2 rounded-full mb-4">
             CONNECTIVITY
           </div>
-          <h2 className="text-4xl font-bold mb-6">Enterprise-Grade Networking Built In</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Enterprise-Grade Networking Built In</h2>
           <p className="text-xl text-gray-600">
             NVIDIA ConnectX-7 delivers the speed and security your AI workloads demand.
           </p>
@@ -45,7 +45,7 @@ export function AscentConnectivity() {
                 height={300}
                 className="rounded-lg mb-6 w-full h-48 object-cover"
               />
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
