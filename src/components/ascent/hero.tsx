@@ -71,7 +71,7 @@ export function AscentHero() {
           <div className="hidden lg:block relative">
             <div className="relative z-10">
               <Image
-                src="https://dlcdnwebimgs.asus.com/gain/c66958f8-57de-4563-b0db-bd317bfaf1f3/w800"
+                src="/images/ascent/hero-product.jpg"
                 alt="Neteon AI Ascent GX10"
                 width={800}
                 height={600}

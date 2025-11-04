@@ -33,7 +33,7 @@ export function AscentModels() {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <Image
-              src="https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/pic_models.jpg"
+              src="/images/ascent/pic_models.jpg"
               alt="AI Models"
               width={600}
               height={400}

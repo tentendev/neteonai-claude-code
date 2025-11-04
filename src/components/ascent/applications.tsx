@@ -5,21 +5,18 @@ import "../../app/ascent-gx10/styles.css";
 export function AscentApplications() {
   const applications = [
     {
-      image:
-        "https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/application-1.jpg",
+      image: "/images/ascent/application-1.jpg",
       title: "Rapid Prototyping",
       description: "Test ideas quickly without waiting for cloud resources. Iterate faster, ship better.",
     },
     {
-      image:
-        "https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/application-2.jpg",
+      image: "/images/ascent/application-2.jpg",
       title: "Model Fine-Tuning",
       description:
         "Customize pre-trained models for your specific use case. Keep your data local and private.",
     },
     {
-      image:
-        "https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/application-3.jpg",
+      image: "/images/ascent/application-3.jpg",
       title: "Data Science",
       description: "Analyze massive datasets with ease. Run complex analytics and ML workflows locally.",
     },
@@ -74,7 +71,7 @@ export function AscentApplications() {
             </div>
             <div>
               <Image
-                src="https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/pic_deployment.jpg"
+                src="/images/ascent/pic_deployment.jpg"
                 alt="Cloud Integration"
                 width={600}
                 height={400}

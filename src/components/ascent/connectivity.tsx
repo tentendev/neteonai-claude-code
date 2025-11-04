@@ -4,21 +4,18 @@ import "../../app/ascent-gx10/styles.css";
 export function AscentConnectivity() {
   const features = [
     {
-      image:
-        "https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/security-1.jpg",
+      image: "/images/ascent/security-1.jpg",
       title: "Ultra-Fast Data Throughput",
       description:
         "Lightning-fast bandwidth for distributed AI workloads and rapid model synchronization.",
     },
     {
-      image:
-        "https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/security-2.jpg",
+      image: "/images/ascent/security-2.jpg",
       title: "Hardware-Accelerated Security",
       description: "Built-in TLS, IPsec, and MACsec encryption without CPU overhead.",
     },
     {
-      image:
-        "https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/security-3.jpg",
+      image: "/images/ascent/security-3.jpg",
       title: "Precision Time Sync",
       description:
         "IEEE 1588v2 PTP for microsecond-level synchronization in edge computing.",

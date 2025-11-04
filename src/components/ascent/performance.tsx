@@ -57,7 +57,7 @@ export function AscentPerformance() {
 
           <div className="hidden lg:block">
             <Image
-              src="https://dlcdnwebimgs.asus.com/files/media/202506/5c0fb57c-4e48-4e96-8c97-04bf8df2677c/v1/img/pic_ai.jpg"
+              src="/images/ascent/pic_ai.jpg"
               alt="AI Performance"
               width={600}
               height={400}
